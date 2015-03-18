@@ -1,6 +1,6 @@
 require 'nokogiri'
-require 'open-uri'
 require 'sinatra'
+require 'open-uri'
 
 configure :development do
   set :bind, '0.0.0.0'
