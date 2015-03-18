@@ -1,7 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
 require 'sinatra'
-require 'net/http'
 
 configure :development do
   set :bind, '0.0.0.0'
@@ -13,11 +12,8 @@ get '/' do
   erb :index
 end
 
-
-  
   
 get '/images/:loller' do
-
   param = params[:loller].gsub("*", "//") + "/"
   root = "http://" + param
   page = Nokogiri::HTML(open(root)) #Pull page
